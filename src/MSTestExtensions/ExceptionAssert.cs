@@ -6,7 +6,7 @@ namespace MSTestExtensions
     /// <summary>
     /// Common methods used by Throws and ThrowsAsync methods for verifying exception properties.
     /// </summary>
-    internal static class ExceptionAssert
+    public static class ExceptionAssert
     {
         /// <summary>
         /// Fails the test if no exception is thrown by the method under test.
