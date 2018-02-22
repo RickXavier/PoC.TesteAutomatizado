@@ -1,11 +1,10 @@
 ﻿using System.Configuration;
 using System.Data.SQLite;
 
-namespace PoC.TesteAutomatizado.Repositorio.Base
+namespace PoC.TesteAutomatizado.Teste.Util
 {
-    public static class ConexaoBase
+    public static class TesteUtil
     {
-
         private static string Diretorio
         {
             get
@@ -22,12 +21,12 @@ namespace PoC.TesteAutomatizado.Repositorio.Base
             }
         }
 
-        public static SQLiteConnection CriarConexao()
+        private static SQLiteConnection CriarConexao()
         {
             return new SQLiteConnection(string.Format("Data Source={0}{1};Version=3;", Diretorio, CaminhoBancoDados));
         }
 
-        public static void ExecutarComando(string sql)
+        private static void ExecutarComando(string sql)
         {
             using (var conexao = CriarConexao())
             {
@@ -36,18 +35,17 @@ namespace PoC.TesteAutomatizado.Repositorio.Base
             }
         }
 
-        public static void Executar(this SQLiteCommand comando)
+        private static void Executar(this SQLiteCommand comando)
         {
             if (comando.Connection.State == System.Data.ConnectionState.Closed)
                 comando.Connection.Open();
             comando.ExecuteNonQuery();
         }
 
-        public static SQLiteDataReader ExecutarLeitura(this SQLiteCommand comando)
+        public static void PrepararBanco()
         {
-            if (comando.Connection.State == System.Data.ConnectionState.Closed)
-                comando.Connection.Open();
-            return comando.ExecuteReader();
+            ExecutarComando("DELETE FROM Contrato; UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = 'Contrato'");
+            ExecutarComando("DELETE FROM Pedido; UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = 'Pedido'");
         }
     }
 }
