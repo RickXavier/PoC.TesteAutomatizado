@@ -2,7 +2,6 @@
 using MSTestExtensions;
 using PoC.TesteAutomatizado.Dominio.Dto;
 using PoC.TesteAutomatizado.Interface.Processo;
-using PoC.TesteAutomatizado.Teste.Util;
 using PoC.TesteAutomatizado.Util;
 using System;
 using System.Linq;
@@ -14,23 +13,14 @@ namespace PoC.TesteAutomatizado.Teste
     {
         private IPedidoProcesso _pedidoProcesso;
         private IContratoProcesso _contratoProcesso;
-
-        [AssemblyInitialize]
-        public static void IniciarAplicacaoTestes(TestContext context)
-        {
-            TesteUtil.CriarBanco();
-        }
-
+        
         [TestInitialize]
         public void IniciarTestes()
         {
-            TesteUtil.PrepararBanco();
-
-            InjetorDependencias.InjetorDependencias.Iniciar();
+            InjetorDependencias.InjetorDependencias.IniciarMock();
 
             _contratoProcesso = InjetorDependencias.InjetorDependencias.ObterInstancia<IContratoProcesso>();
             _pedidoProcesso = InjetorDependencias.InjetorDependencias.ObterInstancia<IPedidoProcesso>();
-            
         }
 
         [TestMethod]

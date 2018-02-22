@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Teste", "6 - Teste", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.TesteAutomatizado.Teste", "PoC.TesteAutomatizado.Teste\PoC.TesteAutomatizado.Teste.csproj", "{3DA53123-89C2-4ADE-AA4C-B1B89D770FBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.TesteAutomatizado.Repositorio.Mock", "PoC.TesteAutomatizado.Repositorio.Mock\PoC.TesteAutomatizado.Repositorio.Mock.csproj", "{1ECFE340-04E6-42A8-99C8-2FAAB17FCDF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{3DA53123-89C2-4ADE-AA4C-B1B89D770FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DA53123-89C2-4ADE-AA4C-B1B89D770FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DA53123-89C2-4ADE-AA4C-B1B89D770FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ECFE340-04E6-42A8-99C8-2FAAB17FCDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ECFE340-04E6-42A8-99C8-2FAAB17FCDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ECFE340-04E6-42A8-99C8-2FAAB17FCDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ECFE340-04E6-42A8-99C8-2FAAB17FCDF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{899A4688-085E-4FBE-8BA7-09451B5B1322} = {ED9F573C-099C-4567-A60E-9EC1468EE056}
 		{C27FCE7A-AD08-4F5F-BB2B-6CA057A2866C} = {81A1E79C-B558-4197-8E87-99E09573FCE6}
 		{3DA53123-89C2-4ADE-AA4C-B1B89D770FBD} = {58AA49F9-1E4B-4735-8498-05E5AA2DA258}
+		{1ECFE340-04E6-42A8-99C8-2FAAB17FCDF3} = {D270ED73-8E38-4642-82A0-EC4254316B04}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7586DF02-C0A4-4F06-97E5-46BE6E6B4717}

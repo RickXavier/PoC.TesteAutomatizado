@@ -1,4 +1,5 @@
 ﻿using PoC.TesteAutomatizado.Dominio.Dto;
+using PoC.TesteAutomatizado.Dominio.Entidade;
 using PoC.TesteAutomatizado.Interface.Processo;
 using PoC.TesteAutomatizado.Interface.Repositorio;
 using PoC.TesteAutomatizado.Processo.Mapper;
@@ -10,7 +11,6 @@ namespace PoC.TesteAutomatizado.Processo
 {
     public class PedidoProcesso : IPedidoProcesso
     {
-
         private readonly IContratoRepositorio _contratoRepositorio;
         private readonly IPedidoRepositorio _pedidoRepositorio;
 
@@ -20,18 +20,17 @@ namespace PoC.TesteAutomatizado.Processo
             _pedidoRepositorio = pedidoRepositorio;
         }
 
-        public void InserirPedido(PedidoDto pedidoDto)
+        public void ValidarPedido(Pedido pedido)
         {
-            var pedido = pedidoDto.CriarEntidade(); 
-
             if (pedido.Volume < 1)
                 throw new ExcecaoRegraNegocio(ExcecaoRegraNegocio.VOLUME_INVALIDO);
 
             if (pedido.DataPedido < DateTime.Now)
                 throw new ExcecaoRegraNegocio(ExcecaoRegraNegocio.DATA_INVALIDA);
+        }
 
-            var contrato = _contratoRepositorio.ObterContrato(pedido.ContratoId);
-
+        public void ValidarContrato(Pedido pedido, Contrato contrato)
+        {
             if (!contrato.Ativo)
                 throw new ExcecaoRegraNegocio(ExcecaoRegraNegocio.CONTRATO_INATIVO);
 
@@ -40,6 +39,15 @@ namespace PoC.TesteAutomatizado.Processo
 
             if (pedido.DataPedido > contrato.DataFimVigencia)
                 throw new ExcecaoRegraNegocio(ExcecaoRegraNegocio.CONTRATO_NAO_VIGENTE);
+        }
+
+        public void InserirPedido(PedidoDto pedidoDto)
+        {
+            var pedido = pedidoDto.CriarEntidade();
+            ValidarPedido(pedido);
+
+            var contrato = _contratoRepositorio.ObterContrato(pedido.ContratoId);
+            ValidarContrato(pedido, contrato);
 
             _contratoRepositorio.AtualizarVolume(contrato.ContratoId, contrato.VolumeDisponivel - pedido.Volume);
             _pedidoRepositorio.InserirPedido(pedido);
