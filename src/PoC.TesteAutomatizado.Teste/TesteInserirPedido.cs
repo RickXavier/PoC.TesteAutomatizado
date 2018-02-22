@@ -17,7 +17,7 @@ namespace PoC.TesteAutomatizado.Teste
         [TestInitialize]
         public void IniciarTestes()
         {
-            InjetorDependencias.InjetorDependencias.IniciarMock();
+            InjetorDependencias.InjetorDependencias.IniciarMoq();
 
             _contratoProcesso = InjetorDependencias.InjetorDependencias.ObterInstancia<IContratoProcesso>();
             _pedidoProcesso = InjetorDependencias.InjetorDependencias.ObterInstancia<IPedidoProcesso>();

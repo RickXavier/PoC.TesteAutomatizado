@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PoC.TesteAutomatizado.Repositorio.Mock")]
+[assembly: AssemblyTitle("PoC.TesteAutomatizado.Repositorio.Moq")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PoC.TesteAutomatizado.Repositorio.Mock")]
+[assembly: AssemblyProduct("PoC.TesteAutomatizado.Repositorio.Moq")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1ecfe340-04e6-42a8-99c8-2faab17fcdf3")]
+[assembly: Guid("a114ed5b-79b6-4f13-a32d-802ad19e1a45")]
 
 // Version information for an assembly consists of the following four values:
 //

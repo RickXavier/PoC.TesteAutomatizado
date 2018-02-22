@@ -62,9 +62,9 @@
       <Project>{7E73064A-3241-4F83-8A46-4CE82BD8C306}</Project>
       <Name>PoC.TesteAutomatizado.Processo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PoC.TesteAutomatizado.Repositorio.Mock\PoC.TesteAutomatizado.Repositorio.Mock.csproj">
-      <Project>{1ECFE340-04E6-42A8-99C8-2FAAB17FCDF3}</Project>
-      <Name>PoC.TesteAutomatizado.Repositorio.Mock</Name>
+    <ProjectReference Include="..\PoC.TesteAutomatizado.Repositorio.Moq\PoC.TesteAutomatizado.Repositorio.Moq.csproj">
+      <Project>{A114ED5B-79B6-4F13-A32D-802AD19E1A45}</Project>
+      <Name>PoC.TesteAutomatizado.Repositorio.Moq</Name>
     </ProjectReference>
     <ProjectReference Include="..\PoC.TesteAutomatizado.Repositorio\PoC.TesteAutomatizado.Repositorio.csproj">
       <Project>{E54C61AD-939F-4EA1-8877-C9B3B2B681AE}</Project>
