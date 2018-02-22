@@ -59,7 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\ConexaoBase.cs" />
     <Compile Include="ContratoRepositorio.cs" />
     <Compile Include="Mapper\SQLiteDataReaderMapper.cs" />
     <Compile Include="PedidoRepositorio.cs" />
@@ -73,6 +72,10 @@
     <ProjectReference Include="..\PoC.TesteAutomatizado.Interface.Repositorio\PoC.TesteAutomatizado.Interface.Repositorio.csproj">
       <Project>{C27FCE7A-AD08-4F5F-BB2B-6CA057A2866C}</Project>
       <Name>PoC.TesteAutomatizado.Interface.Repositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoC.TesteAutomatizado.Util\PoC.TesteAutomatizado.Util.csproj">
+      <Project>{161F0D36-1C2E-4EDB-BC05-8C8ACEEE1EAA}</Project>
+      <Name>PoC.TesteAutomatizado.Util</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

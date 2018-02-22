@@ -15,6 +15,12 @@ namespace PoC.TesteAutomatizado.Teste
         private IPedidoProcesso _pedidoProcesso;
         private IContratoProcesso _contratoProcesso;
 
+        [AssemblyInitialize]
+        public static void IniciarAplicacaoTestes(TestContext context)
+        {
+            TesteUtil.CriarBanco();
+        }
+
         [TestInitialize]
         public void IniciarTestes()
         {
@@ -24,22 +30,7 @@ namespace PoC.TesteAutomatizado.Teste
 
             _contratoProcesso = InjetorDependencias.InjetorDependencias.ObterInstancia<IContratoProcesso>();
             _pedidoProcesso = InjetorDependencias.InjetorDependencias.ObterInstancia<IPedidoProcesso>();
-
-            _contratoProcesso.InserirContrato(new ContratoDto()
-            {
-                DataInicioVigencia = DateTime.Now.Date.AddDays(-10),
-                DataFimVigencia = DateTime.Now.Date.AddDays(10),
-                VolumeDisponivel = 100,
-                Ativo = true
-            });
-
-            _contratoProcesso.InserirContrato(new ContratoDto()
-            {
-                DataInicioVigencia = DateTime.Now.Date.AddDays(-10),
-                DataFimVigencia = DateTime.Now.Date.AddDays(10),
-                VolumeDisponivel = 100,
-                Ativo = false
-            });
+            
         }
 
         [TestMethod]

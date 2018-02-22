@@ -1,8 +1,7 @@
 ﻿using PoC.TesteAutomatizado.Dominio.Entidade;
 using PoC.TesteAutomatizado.Interface.Repositorio;
-using PoC.TesteAutomatizado.Repositorio.Base;
 using PoC.TesteAutomatizado.Repositorio.Mapper;
-using System;
+using PoC.TesteAutomatizado.Util;
 using System.Collections.Generic;
 using System.Data.SQLite;
 
